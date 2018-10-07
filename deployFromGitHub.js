@@ -3,8 +3,15 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.put('/someRouteToCatchWebHook', function(request, response) {
-  // webhook parsing goes here
-});
+// support json encoded bodies
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
-app.listen(port, () => console.log(`ElkiaCache listening for deployment on ${port}!`))
+// https://api.elkia.club/service/cache/update
+app.post('/service/cache/update', function (req, res) {
+  console.log(req.body)
+  res.send(req.body.zen)
+})
+
+app.listen(port, () => console.log(`ElkiaCache listening for updates on :${port}!`))
