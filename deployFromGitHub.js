@@ -16,7 +16,7 @@ module.exports.run = function () {
 // https://api.elkia.club/service/cache/update
   app.post('/service/cache/update', function (req, res) {
     console.log('github webhook')
-    exec('bash delpoy.sh', function (error, stdout, stderr) {
+    exec('delpoy.sh', function (error, stdout, stderr) {
       if (error) {
         console.log(error.code)
       }
