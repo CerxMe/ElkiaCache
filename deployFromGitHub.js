@@ -15,7 +15,7 @@ module.exports.run = function () {
 
 // https://api.elkia.club/service/cache/update
   app.post('/service/cache/update', function (req, res) {
-    exec('bash delpoy.js', function (error, stdout, stderr) {
+    exec('bash delpoy.sh', function (error, stdout, stderr) {
       if (error) {
         console.log(error.code)
       }
