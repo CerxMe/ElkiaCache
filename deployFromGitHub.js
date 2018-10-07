@@ -24,5 +24,5 @@ module.exports.run = function () {
     res.send(req.body.zen)
   })
 
-  return app.listen(port, () => console.log(`ElkiaCache listening for updates on :${port}!`))
+  return app.listen(port, () => console.log(`listening for updates on :${port}!`))
 }
